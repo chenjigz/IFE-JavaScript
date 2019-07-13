@@ -204,12 +204,8 @@
                     if (index >= sugItems.length) index = 0;
                     changeBgColor(index, sugItems);
                 } else if (e.keyCode == 13) {
-                    for (let i = 0; i < sugItems.length; i++) {
-                        if (sugItems[i].className == "high-light") {
-                            var str = sugItems[i].innerHTML;
-                        }
-                    }
-                    input.value = str;
+                    var str = sugItems[i].innerHTML;
+                    input.value = HtmlUtil.htmlDecode(str);
                     hiddenHint(sugWrapper);
                     input.blur();
                 }
